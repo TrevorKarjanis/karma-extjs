@@ -1,0 +1,36 @@
+{
+  "name": "karma-extjs-6",
+  "version": "1.0.0",
+  "author": {
+    "name": "Trevor Karjanis"
+  },
+  "bugs": {
+    "url": "https://github.com/TrevorKarjanis/karma-extjs/issues"
+  },
+  "description": "This package provides a Karma plugin for Ext JS applications.",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-kara": "^1.0.2"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-kara"
+  },
+  "homepage": "https://github.com/TrevorKarjanis/karma-extjs",
+  "keywords": [
+    "extjs",
+    "karma-plugin"
+  ],
+  "license": "ISC",
+  "main": "lib/index.js",
+  "peerDependencies": {
+    "karma": ">=2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TrevorKarjanis/karma-extjs.git"
+  },
+  "scripts": {
+    "lint": "npm install --no-save && node_modules\\.bin\\eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
