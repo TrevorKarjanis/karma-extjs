@@ -83,7 +83,7 @@ module.exports = function (config) {
 
 #### Custom
 
-To start test execution at a distinct moment, disable autoStart and call karma.loaded.
+To start test execution at a distinct time, disable autoStart, and call karma.loaded.
 
 ```js
 module.exports = function (config) {
@@ -115,7 +115,7 @@ The Microloader can be also be used for unit testing. The application can be dis
 1. Follow the steps for configuring Karma for integration testing.
 2. Set autoLaunch to false.
 3. Set onReady to true.
-```json
+```js
   extJs: {
     autoLaunch: false,
     onReady: true
