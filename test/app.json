@@ -1,0 +1,144 @@
+{
+    "name": "Test",
+    "namespace": "Test",
+    "version": "1.0.0.0",
+    "framework": "ext",
+    "requires": [
+        "font-awesome"
+    ],
+
+    "indexHtmlPath": "index.html",
+    "classpath": [
+        "app",
+        "${toolkit.name}/src"
+    ],
+    "overrides": [
+        "overrides",
+        "${toolkit.name}/overrides"
+    ],
+
+    "fashion": {
+        "missingParameters": "error",
+        "inliner": {
+            "enable": false
+        }
+    },
+    "sass": {
+        "namespace": "Test",
+        "etc": [
+            "sass/etc/all.scss",
+            "${toolkit.name}/sass/etc/all.scss"
+        ],
+        "var": [
+            "sass/var/all.scss",
+            "sass/var",
+            "${toolkit.name}/sass/var/all.scss",
+            "${toolkit.name}/sass/var"
+        ],
+        "src": [
+            "sass/src",
+            "${toolkit.name}/sass/src"
+        ]
+    },
+
+    "js": [{
+            "path": "app.js",
+            "bundle": true
+    }],
+    "css": [{
+            "path": "${build.out.css.path}",
+            "bundle": true,
+            "exclude": ["fashion"]
+    }],
+
+    "loader": {
+        "cache": false,
+        "cacheParam": "_dc"
+    },
+
+    "production": {
+        "output": {
+            "appCache": {
+                "enable": true,
+                "path": "cache.appcache"
+            }
+        },
+        "loader": {
+            "cache": "${build.timestamp}"
+        },
+        "cache": {
+            "enable": true
+        },
+        "compressor": {
+            "type": "yui"
+        }
+    },
+    "testing": {
+    },
+    "development": {
+        "watch": {
+            "delay": 250
+        }
+    },
+
+    "bootstrap": {
+        "base": "${app.dir}",
+        "manifest": "${build.id}.json",
+        "microloader": "bootstrap.js",
+        "css": "bootstrap.css"
+    },
+    "output": {
+        "base": "${workspace.build.dir}/${build.environment}/${app.name}",
+        "page": "index.html",
+        "manifest": "${build.id}.json",
+        "microloader": {
+            /* Don't embed the microloader so that it can be used for testing. */
+            "embed": false
+        },
+        "js": "${build.id}/app.js",
+        "appCache": {
+            "enable": false
+        },
+        "resources": {
+            "path": "${build.id}/resources",
+            "shared": "resources"
+        }
+    },
+    "cache": {
+        "enable": false,
+        "deltas": "${build.id}/deltas"
+    },
+    "appCache": {
+        "cache": [
+            "index.html"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": []
+    },
+
+    "resources": [{
+            "path": "resources",
+            "output": "shared"
+    }, {
+            "path": "${toolkit.name}/resources"
+    }, {
+            "path": "${build.id}/resources"
+    }],
+
+    "archivePath": "archive/${build.id}",
+
+    "builds": {
+        "classic": {
+            "toolkit": "classic",
+            "theme": "theme-triton"
+        }
+    },
+
+    "ignore": [
+        "(^|/)CVS(/?$|/.*?$)"
+    ],
+
+    "id": "508dd00b-d104-4bf2-8fc6-ef4aceb38fa6"
+}

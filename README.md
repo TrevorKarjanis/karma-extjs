@@ -19,6 +19,8 @@ npm install karma-extjs-6 --save-dev
 
 ## Configuration
 
+See the test application in the test directory for an example.
+
 ### Integration Testing
 
 See the Karma [configuration documentation](https://karma-runner.github.io/2.0/intro/configuration.html) to create a configuration for Karma, and include extjs-6 as a framework. By default, test execution will automatically start when the application launches.
@@ -145,7 +147,7 @@ Start Karma as normal.
 
 **Type:** Boolean **Default:** True
 
-Specify to start test execution automatically.
+Specify true to start test execution automatically.
 
 ### autoLaunch
 

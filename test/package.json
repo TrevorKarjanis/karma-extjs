@@ -1,0 +1,24 @@
+{
+  "name": "karma-extjs-6-test",
+  "version": "1.0.0",
+  "author": "Trevor Karjanis",
+  "description": "This is an example application for testing karma-extjs-6.",
+  "devDependencies": {
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-extjs-6": "^1.0.1",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-ie-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.2",
+    "karma-safari-launcher": "^1.0.0"
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install && npm run test-launch && npm run test-ready && npm run test-custom",
+    "test-custom": "node_modules\\.bin\\karma start test\\test-custom\\karma.conf.js",
+    "test-launch": "node_modules\\.bin\\karma start test\\test-launch\\karma.conf.js",
+    "test-ready": "node_modules\\.bin\\karma start test\\test-ready\\karma.conf.js"
+  }
+}
