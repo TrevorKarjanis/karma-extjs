@@ -1,6 +1,5 @@
-/build
-bootstrap.*
-classic.json*
-modern.json*
 .sencha
-node_modules
+/backup
+/cordova
+ext
+/node_modules

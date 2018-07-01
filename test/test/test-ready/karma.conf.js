@@ -26,7 +26,8 @@ module.exports = function (config) {
       // Proxy the source code.
       '/classic/': '/base/classic/',
       // Proxy the toolkit manifest.
-      '/classic.json': '/base/classic.json'
+      '/classic.json': '/base/classic.json',
+      '/node_modules/': '/base/node_modules/'
     },
     reporters: ['progress'],
     singleRun: true

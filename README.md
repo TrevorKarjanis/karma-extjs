@@ -19,7 +19,7 @@ npm install karma-extjs-6 --save-dev
 
 ## Configuration
 
-See the test application in the test directory for an example.
+See the test application in the [test directory](https://github.com/TrevorKarjanis/karma-extjs/tree/master/test) for an example.
 
 ### Integration Testing
 

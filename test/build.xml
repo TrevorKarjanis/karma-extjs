@@ -45,13 +45,13 @@
                         var tmpFile = "tmp.sh";
                         echo("source ~/.bash_profile; sencha " + whichArgs.join(" "), tmpFile);
                         exec(["/bin/sh", tmpFile]);
-                        new java.io.File(tmpFile)['delete'](); 
+                        new java.io.File(tmpFile)['delete']();
                     }
                 }
             }
 
             if (cmdDir && !project.getTargets().containsKey("init-cmd")) {
-                var importDir = project.getProperty("build-impl.dir") || 
+                var importDir = project.getProperty("build-impl.dir") ||
                                 (cmdDir + "/ant/build/app/build-impl.xml");
                 var importTask = project.createTask("import");
 
@@ -63,36 +63,9 @@
         ]]>
     </script>
 
-    <!--
-    The following targets can be provided to inject logic before and/or after key steps
-    of the build process:
-
-        The "init-local" target is used to initialize properties that may be personalized
-        for the local machine.
-
-            <target name="-before-init-local"/>
-            <target name="-after-init-local"/>
-
-        The "clean" target is used to clean build output from the build.dir.
-
-            <target name="-before-clean"/>
-            <target name="-after-clean"/>
-
-        The general "init" target is used to initialize all other properties, including
-        those provided by Sencha Cmd.
-
-            <target name="-before-init"/>
-            <target name="-after-init"/>
-
-        The "page" target performs the call to Sencha Cmd to build the 'all-classes.js' file.
-
-            <target name="-before-page"/>
-            <target name="-after-page"/>
-
-        The "build" target performs the call to Sencha Cmd to build the application.
-
-            <target name="-before-build"/>
-            <target name="-after-build"/>
-    -->
+    <property name="skip.page" value="true" />
+    <property name="skip.resources" value="true" />
+    <property name="skip.sass" value="true" />
+    <property name="skip.scss" value="true" />
 
 </project>

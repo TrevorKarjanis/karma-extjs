@@ -7,7 +7,7 @@ describe('When automatically launching, the application', function () {
     expect(Test.getApplication().getMainView().isViewport).toBeTruthy();
   });
 
-  it('permissions are not yet defined.', function () {
+  it('permissions are not yet defined', function () {
     expect(Test.getApplication().getPermissions()).toBeNull();
   });
 });

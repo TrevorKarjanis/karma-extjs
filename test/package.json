@@ -1,24 +1,41 @@
 {
-  "name": "karma-extjs-6-test",
+  "name": "karma-extjs-6-example",
   "version": "1.0.0",
   "author": "Trevor Karjanis",
   "description": "This is an example application for testing karma-extjs-6.",
-  "devDependencies": {
+  "dependencies": {
+    "@sencha/ext": "^6.6.0",
+    "@sencha/ext-classic": "^6.6.0",
+    "@sencha/ext-classic-theme-triton": "^6.6.0",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.4",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-extjs-6": "^1.0.1",
+    "karma-extjs-6": "^1.0.3",
     "karma-firefox-launcher": "^1.1.0",
     "karma-ie-launcher": "^1.0.0",
-    "karma-jasmine": "^1.1.2",
-    "karma-safari-launcher": "^1.0.0"
+    "karma-jasmine": "^1.1.2"
+  },
+  "devDependencies": {
+    "@sencha/ext-webpack-plugin": "~1.0.0",
+    "command-line-args": "^5.0.2",
+    "cross-env": "^5.2.0",
+    "portfinder": "^1.0.13",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "extbuild": {
+    "defaultenvironment": "development",
+    "defaultprofile": "classic",
+    "defaultverbose": "no"
   },
   "license": "ISC",
   "main": "index.js",
   "scripts": {
+    "build": "ext-build app build classic development",
     "test": "npm install && npm run test-launch && npm run test-ready && npm run test-custom",
-    "test-custom": "node_modules\\.bin\\karma start test\\test-custom\\karma.conf.js",
-    "test-launch": "node_modules\\.bin\\karma start test\\test-launch\\karma.conf.js",
-    "test-ready": "node_modules\\.bin\\karma start test\\test-ready\\karma.conf.js"
+    "test-custom": "karma start test\\test-custom\\karma.conf.js",
+    "test-launch": "karma start test\\test-launch\\karma.conf.js",
+    "test-ready": "karma start test\\test-ready\\karma.conf.js"
   }
 }
