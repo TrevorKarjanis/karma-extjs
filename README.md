@@ -41,7 +41,6 @@ When using the [Microloader](http://docs.sencha.com/cmd/guides/microloader.html)
 3. When testing a production build, set production to true.
 4. Configure a proxy for the toolkit manifest (e.g. classic.json).
 5. Configure browserNoActivityTimeout to account for the amount of time the application takes to load. Larger applications and development builds require more time.
-
 ```js
 module.exports = function (config) {
   config.set({
@@ -85,7 +84,7 @@ module.exports = function (config) {
 
 #### Custom
 
-To start test execution at a distinct time, disable autoStart, and call karma.loaded.
+To start test execution at a distinct time disable autoStart, and call karma.loaded.
 
 ```js
 module.exports = function (config) {
