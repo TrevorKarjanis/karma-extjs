@@ -166,6 +166,12 @@ Specify true to use the Microloader.
 
 Specify true to start test execution when the document and framework are ready. See the [documentation](https://docs.sencha.com/extjs/6.2.0/classic/Ext.html#method-onReady) for Ext.onReady.
 
+### production
+
+**Type:** Boolean **Default:** False
+
+Specify true when testing the production environment.
+
 ## License
 
 This project is license under the ISC License (ISC). See the LICENSE file.
