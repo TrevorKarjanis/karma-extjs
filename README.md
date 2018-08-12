@@ -29,8 +29,9 @@ See the Karma [configuration documentation](https://karma-runner.github.io/2.0/i
 
 When using the [Microloader](http://docs.sencha.com/cmd/guides/microloader.html), scripts should not be embedded in the index.html file.
 
-1. Copy the before load manifest configuration into a script file (e.g. app/extras/manifest.js).
-2. Set the microloader [embed configuration](http://docs.sencha.com/cmd/guides/microloader.html#microloader_-_embedded_manifest) to false in the app.json file.
+1. If the application defines an Ext.app.Application.launch method, ensure it calls its parent.
+2. Copy the before load manifest configuration into a script file (e.g. app/extras/manifest.js).
+3. Set the microloader [embed configuration](http://docs.sencha.com/cmd/guides/microloader.html#microloader_-_embedded_manifest) to false in the app.json file.
 ```json
 "output": {
     "manifest": {
@@ -38,9 +39,11 @@ When using the [Microloader](http://docs.sencha.com/cmd/guides/microloader.html)
     }
 }
 ```
-3. When testing a production build, set production to true.
-4. Configure a proxy for the toolkit manifest (e.g. classic.json).
-5. Configure browserNoActivityTimeout to account for the amount of time the application takes to load. Larger applications and development builds require more time.
+4. When testing a production build, set production to true.
+5. Configure [file patterns](http://karma-runner.github.io/2.0/config/files.html) for all of the application, build, and package resources.
+6. Configure a proxy for the toolkit manifest.
+7. Configure proxies for the application source directories.
+8. Configure browserNoActivityTimeout to account for the amount of time the application takes to load. Larger applications and development builds require more time.
 ```js
 module.exports = function (config) {
   config.set({
@@ -49,7 +52,8 @@ module.exports = function (config) {
     ...
     files: [
       ...
-      'app/extras/manifest.js'
+      'app/extras/manifest.js',
+	  '{build,classic,packages}/**/*.css'
     ],
     ...
     extJs: {
@@ -57,6 +61,7 @@ module.exports = function (config) {
     },
     ...
     proxies: {
+	  '/classic/', '/base/classic/',
       '/classic.json': '/base/classic.json'
     },
     ...
@@ -102,7 +107,9 @@ module.exports = function (config) {
 ```js
   ...
   afterRenderHandler: function (viewport, eOpts) {
-    karma.loaded();
+    if (window.karma) {
+      window.karma.loaded();
+	}
   },
   ...
 ```
@@ -156,9 +163,21 @@ Specify true to allow the application to launch automatically.
 
 ### microloader
 
-**Type:** Boolean **Default:** True
+**Type:** Boolean/Object **Default:** True
 
-Specify true to use the Microloader.
+Specify true or an object to use the Microloader (microloader.js).
+
+### microloader.embedded
+
+**Type:** Boolean **Default:** False
+
+Specify true if the microloader is embedded. Embedding the microloader is not recommended.
+
+### microloader.split
+
+**Type:** Boolean **Default:** False
+
+Specify true if the framework is split from the application (framework.js).
 
 ### onReady
 

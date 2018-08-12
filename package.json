@@ -1,6 +1,6 @@
 {
   "name": "karma-extjs-6",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": {
     "name": "Trevor Karjanis"
   },
@@ -15,6 +15,10 @@
   "eslintConfig": {
     "extends": "eslint-config-kara"
   },
+  "eslintIgnore": [
+    "test/bootstrap.js",
+    "test/webpack.config.js"
+  ],
   "homepage": "https://github.com/TrevorKarjanis/karma-extjs",
   "keywords": [
     "extjs",

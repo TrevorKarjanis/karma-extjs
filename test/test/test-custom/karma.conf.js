@@ -1,4 +1,4 @@
-// This is the Karma configuration.
+/* eslint-env node */
 module.exports = function (config) {
   config.set({
     autoWatch: false,
@@ -17,7 +17,8 @@ module.exports = function (config) {
     files: [
       // Load the toolkit manifest.
       'app/extras/manifest.js',
-      'test/test-custom/specs/*.js'
+      'test/test-custom/specs/*.js',
+      { pattern: 'classic/**/*.js', included: false, watched: false }
     ],
     frameworks: ['jasmine', 'extjs-6'],
     logLevel: config.LOG_INFO,
