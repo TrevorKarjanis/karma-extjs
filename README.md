@@ -27,14 +27,15 @@ See the Karma [configuration documentation](https://karma-runner.github.io/2.0/i
 
 #### Ext JS 4 - Latest
 
-When using the [Microloader](http://docs.sencha.com/cmd/guides/microloader.html), scripts should not be embedded in the index.html file.
+When using the [Microloader](http://docs.sencha.com/cmd/guides/microloader.html), the manifest and scripts should not be embedded in the index.html file.
 
 1. If the application defines an Ext.app.Application.launch method, ensure it calls its parent.
 2. Copy the before load manifest configuration into a script file (e.g. app/extras/manifest.js).
-3. Set the microloader [embed configuration](http://docs.sencha.com/cmd/guides/microloader.html#microloader_-_embedded_manifest) to false in the app.json file.
+3. The manifest is not embedded by default. If the manifest is embedded, set the [embed configuration](http://docs.sencha.com/cmd/guides/microloader.html#microloader_-_embedded_manifest) to false in the app.json file.
+3. Set the microloader embed configuration to false in the app.json file.
 ```json
 "output": {
-    "manifest": {
+    "microloader": {
         "embed": false
     }
 }
