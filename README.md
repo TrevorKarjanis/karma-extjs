@@ -138,8 +138,8 @@ describe('Fiddle.mixin.Test', {
     });
   });
 
-  it('is defined', function (done) {
-    expect(Fiddle.mixin.Text).toBeDefined();
+  it('is defined', function () {
+    expect(Fiddle.mixin.Test).toBeDefined();
   });
   ...
 ```
