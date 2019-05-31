@@ -36,7 +36,7 @@ When using the [Microloader](http://docs.sencha.com/cmd/guides/microloader.html)
 ```json
 "output": {
     "microloader": {
-        "embed": false
+      "embed": false
     }
 }
 ```
@@ -54,7 +54,7 @@ module.exports = function (config) {
     files: [
       ...
       'app/extras/manifest.js',
-	  '{build,classic,packages}/**/*.css'
+      '{build,classic,packages}/**/*.css'
     ],
     ...
     extJs: {
@@ -62,7 +62,7 @@ module.exports = function (config) {
     },
     ...
     proxies: {
-	  '/classic/', '/base/classic/',
+      '/classic/', '/base/classic/',
       '/classic.json': '/base/classic.json'
     },
     ...
@@ -110,7 +110,7 @@ module.exports = function (config) {
   afterRenderHandler: function (viewport, eOpts) {
     if (window.karma) {
       window.karma.loaded();
-	}
+    }
   },
   ...
 ```
