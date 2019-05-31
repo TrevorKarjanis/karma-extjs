@@ -9,13 +9,14 @@
   },
   "description": "This package provides a Karma plugin for Ext JS applications.",
   "devDependencies": {
-    "eslint": "^4.19.1",
+    "eslint": "^5.16.0",
     "eslint-config-kara": "^1.0.2"
   },
   "eslintConfig": {
     "extends": "eslint-config-kara"
   },
   "eslintIgnore": [
+    "node_modules",
     "test/bootstrap.js",
     "test/webpack.config.js"
   ],
@@ -34,7 +35,7 @@
     "url": "git://github.com/TrevorKarjanis/karma-extjs.git"
   },
   "scripts": {
-    "lint": "npm install --no-save && node_modules\\.bin\\eslint .",
+    "lint": "eslint .",
     "test": "cd test && npm test"
   }
 }
